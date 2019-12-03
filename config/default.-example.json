@@ -1,3 +1,4 @@
 {
-    "mongoURI":"<@mongodbconnection url>"
+    "mongoURI":"<@mongodbconnection url>",
+    "jwtSecretKey":"your-jwt-secret-key"
 }
