@@ -1,6 +1,7 @@
 import React from 'react';
 import Contacts from '../contacts/Contacts';
 import ContactForm from '../contacts/ContactForm';
+import ContactFiltered from '../contacts/ContactFiltered';
 const Home = () => {
     return (
         <div className="container">
@@ -10,6 +11,7 @@ const Home = () => {
                     <ContactForm/>
                 </div>
                 <div className="col-xs-12 col-sm-6">
+                    <ContactFiltered/>
                     <Contacts/>
                 </div>
             </div>

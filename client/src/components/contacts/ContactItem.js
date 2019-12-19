@@ -6,20 +6,25 @@ const ContactItem = ({contact}) => {
 
     const contactContext= useContext(ContactContext);
 
+    const onEdit =() =>{
+        console.log(contact);
+        contactContext.setCurrent(contact);
+    }
     const onDelete = ()=>{
-        console.log(`the id to delete is ${id}`);
+        
         contactContext.deleteContact(id);
+        contactContext.clearCurrent();
     }
 
     return (
-        <div className='card bg-light'>
-            <h4 className="text-primary text-left p-2">
+        <div className='card mb-1'>
+            <h5 className="text-primary text-left p-2">
                 {name}{' '} 
                 <span style={{ float : 'right'}} className={'badge ' + ( type === 'professional' ? 'badge-success':'badge-primary')}>
                     
                     {type.charAt(0).toUpperCase() + type.slice(1)}
                 </span>
-            </h4>
+            </h5>
 
             <ul className="list-group list-group-flush"> 
                 {email && (
@@ -35,10 +40,10 @@ const ContactItem = ({contact}) => {
                 
             </ul>
 
-            <p>
-                <button className="btn btn-dark btn-sm">Edit</button>
-                <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
-            </p>
+            <div>
+                <button className="btn btn-dark btn-sm m-2" onClick={onEdit}>Edit</button>
+                <button className="btn btn-danger btn-sm m-2" onClick={onDelete}>Delete</button>
+            </div>
 
         </div>
     )
