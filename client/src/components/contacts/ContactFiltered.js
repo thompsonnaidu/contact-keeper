@@ -25,7 +25,7 @@ const ContactFiltered = () => {
     }, [])
     
     return (
-       <form>
+       <form className="mt-3">
         <div className="form-group">
             <input className="form-control" ref={text} type="text" placeholder="filter contact" onChange={onChange}></input>
 
