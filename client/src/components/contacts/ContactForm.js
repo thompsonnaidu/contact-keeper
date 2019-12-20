@@ -68,11 +68,11 @@ const ContactForm = () => {
             <span className="form-check form-check-inline">
                 
                 <input className="form-check-input" type='radio' name='type' value='personal' checked={ type === 'personal'} onChange={onChange} id="personalChoice" />
-                <label className="form-check-label" for="personalChoice">Personal {' '} </label>
+                <label className="form-check-label" htmlfor="personalChoice">Personal {' '} </label>
             </span>
             <span className="form-check form-check-inline">     
                 <input className="form-check-input" type='radio' name='type' value='professional' checked={ type === 'professional'} onChange={onChange} id="professionalChocie" />
-                <label className="form-check-label" for="professionalChocie">Professional</label>
+                <label className="form-check-label" htmlfor="professionalChocie">Professional</label>
             </span>
             <div>
                 <input type="submit" value={current?'Update Contact':'Add Contact'} className='btn btn-primary btn-block'></input>
