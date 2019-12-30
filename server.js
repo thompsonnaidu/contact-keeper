@@ -16,14 +16,17 @@ app.use('/api/users',require('./routes/users'))
 app.use('/api/contacts',require('./routes/contact'))
 app.use('/api/auth',require('./routes/auth'))
 
-console.log(process.env.Node_ENV," process ",process.env)
+
 
 //server static assets in production
 if(process.env.Node_ENV === 'production'){
+    console.log("I am inside production ",process.env)
     // set static folder
     app.use(express.static('client/build'));
 
     app.get('*',(req,res)=>{
+
+        console.log(path.resolve(__dirname, 'client', 'build', 'index.html'));
         res.sendFile(path.resolve(__dirname,'client','build','index.html'))
 
     })
