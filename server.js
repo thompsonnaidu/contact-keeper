@@ -2,8 +2,11 @@ const express =require('express');
 const app=express();
 const connectDB=require('./config/db');
 const PORT= process.env.PORT || 5000;
+const path=require('path');
 //connect to Database
 connectDB()
+
+
 
 
 // initialise middleware
@@ -16,13 +19,18 @@ app.use('/api/auth',require('./routes/auth'))
 
 
 
+//server static assets in production
+if(process.env.Node_ENV === 'production'){
+    // set static folder
+    app.use(express.static('client/build'));
+
+    app.get("*",(req,res)=>{
+
+    })
+} 
+
 
 // Start the server @ port 
 app.listen(PORT,()=>{
     console.log(`server started at ${PORT}`);
-})
-
-
-app.get('/',(request,response)=>{
-    response.json({name:"thomposn"})
 })
