@@ -17,7 +17,7 @@ app.use('/api/users',require('./routes/users'))
 app.use('/api/contacts',require('./routes/contact'))
 app.use('/api/auth',require('./routes/auth'))
 
-
+console.log(process.env.Node_ENV," process ",process.env)
 
 //server static assets in production
 if(process.env.Node_ENV === 'production'){
