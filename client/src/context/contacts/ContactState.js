@@ -12,7 +12,9 @@ import {
     CLEAR_FILTER,
     UPDATE_CONTACT,
     SET_CURRENT,
-    CONTACT_ERROR
+    CONTACT_ERROR,
+    CLEAR_CONTACTS,
+    GET_CONTACTS
 } from '../types';
 
 
@@ -20,27 +22,7 @@ const ContactState= props =>{
 
     const initalState = {
         contacts:[
-            {
-                id:1,
-                name:'Thompson Naidu',
-                email:'thompson.naidu@gmail.com',
-                phone:'8149205705',
-                type:'professional'
-            },
-            {
-                id:2,
-                name:'Thompson Naidu',
-                email:'thompson.naidu@yahoo.com',
-                phone:'8134568420',
-                type:'professional'
-            },
-            {
-                id:3,
-                name:'Thompson Naidu',
-                email:'thompson.naidu@machine.com',
-                phone:'9511733259',
-                type:'personal'
-            }
+           
         ],
         current:null,
         filtered:null,
@@ -48,6 +30,20 @@ const ContactState= props =>{
     };
 
     const [state, dispatch] = useReducer(contactReducer,initalState);
+
+
+
+    // Get contact 
+    const getContacts=async () =>{
+        
+
+        try {
+            const res=await axios.get('/api/contacts');
+            dispatch({ type:GET_CONTACTS,payload : res.data})
+        } catch (error) {
+            dispatch({ type:CONTACT_ERROR,payload : error.response.msg})
+        }
+    }
 
     // Add contact
     const addContact= async (contact) =>{
@@ -97,7 +93,7 @@ const ContactState= props =>{
     const clearFilter= () =>{
         dispatch({ type:CLEAR_FILTER})
     }
-    return (<contactContext.Provider value={{contacts:state.contacts,current:state.current,filtered:state.filtered,error:state.error,filterContact,clearFilter,addContact,deleteContact,setCurrent,clearCurrent,updateContact}}>
+    return (<contactContext.Provider value={{contacts:state.contacts,current:state.current,filtered:state.filtered,error:state.error,filterContact,clearFilter,addContact,deleteContact,setCurrent,clearCurrent,updateContact,getContacts}}>
         {props.children}
     </contactContext.Provider>)
     

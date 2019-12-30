@@ -7,6 +7,8 @@ import {
     CLEAR_FILTER,
     UPDATE_CONTACT,
     SET_CURRENT,
+    CLEAR_CONTACTS,
+    GET_CONTACTS,
     CONTACT_ERROR
 } from '../types';
 
@@ -16,7 +18,8 @@ export default (state ,action )=>{
         case ADD_CONTACT:
             return{
                 ...state,
-                contacts: [...state.contacts, action.payload]
+                contacts: [...state.contacts, action.payload],
+                loading:false
 
             };
         
@@ -24,7 +27,8 @@ export default (state ,action )=>{
             
             return {
                 ...state,
-                contacts:state.contacts.filter(contact=> contact.id !== action.payload)
+                contacts:state.contacts.filter(contact=> contact.id !== action.payload),
+                loading:false
             };
 
         case SET_CURRENT:
@@ -42,7 +46,8 @@ export default (state ,action )=>{
             return{
                 ...state,
                 contacts:state.contacts.map(contact=> contact.id === action.payload.id ? action.payload:contact),
-                filtered:state.filtered.map(contact=> contact.id === action.payload.id ? action.payload:contact)
+                filtered:state.filtered.map(contact=> contact.id === action.payload.id ? action.payload:contact),
+                loading:false
 
             };
         
@@ -52,7 +57,8 @@ export default (state ,action )=>{
                 filtered:state.contacts.filter(contact =>{
                     const regex = new RegExp(`${action.payload}`,'gi');
                     return contact.name.match(regex) || contact.email.match(regex) || contact.phone.match(regex)
-                })
+                }),
+                loading:false
             };
         
         case CLEAR_FILTER:
@@ -62,6 +68,13 @@ export default (state ,action )=>{
             }
         
         case CONTACT_ERROR: return { ...state,error:action.payload}
+        
+        case GET_CONTACTS: return {
+            ...state,
+            contacts:action.payload,
+            loading:false,
+            
+        }
         default: return state;
     }
 
