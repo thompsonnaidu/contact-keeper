@@ -22,6 +22,7 @@ const ContactFiltered = () => {
         if(filtered === null){
             text.current.value='';
         }
+        // eslint-disable-next-line
     }, [])
     
     return (

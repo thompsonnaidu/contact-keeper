@@ -27,6 +27,7 @@ router.post('/',[
 
         //Checking if there is an existing register email
         if(user){
+            console.log("I am in user list");
             return res.status(400).json({msg:"User already exits"})
         }
 

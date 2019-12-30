@@ -1,0 +1,65 @@
+[33mcommit d7a84ad3a5a879cea7ec75f70c6604f5884aaa0c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: thompsonnaidu <thompsonnaiducm1343@gmail.com>
+Date:   Fri Dec 20 08:47:40 2019 +0530
+
+    Adding Register and Login Page with simple validation check
+
+[33mcommit 297ac4e4ace07da32dab507325f68ab8cc4f7913[m
+Author: thompsonnaidu <thompsonnaiducm1343@gmail.com>
+Date:   Thu Dec 19 19:31:32 2019 +0530
+
+    Improving UI
+
+[33mcommit b4fc8608e8415f684417895a85a449d7ab3bb5c8[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: thompsonnaidu <thompsonnaiducm1343@gmail.com>
+Date:   Thu Dec 19 19:11:49 2019 +0530
+
+    Implement Update and Delete functionality
+
+[33mcommit 3a48c7fa1fe1668cf3c73313897412507e0ae725[m
+Author: thompsonnaidu <thompsonnaiducm1343@gmail.com>
+Date:   Thu Dec 19 16:47:08 2019 +0530
+
+    Implementing add and delete contact functionality with dummy data
+
+[33mcommit d39b9dc81e61f1e755dabf47ce4956c2315d7db8[m
+Author: thompsonnaidu <thompsonnaiducm1343@gmail.com>
+Date:   Tue Dec 17 09:43:06 2019 +0530
+
+    Add Contact and ContactItem component and implementing context API
+
+[33mcommit 1f8d27b768e58d3c0a4fa35a17b2b6d8017d3a56[m
+Author: thompsonnaidu <thompsonnaiducm1343@gmail.com>
+Date:   Wed Dec 4 08:36:31 2019 +0530
+
+    Updating gitignore file
+
+[33mcommit 5db7dd9dfc50c9b3d6a6794f93db46438c2dcf4c[m
+Author: thompsonnaidu <thompsonnaiducm1343@gmail.com>
+Date:   Wed Dec 4 08:33:59 2019 +0530
+
+    Implementing the client application for Contact Keeper and router to home page and about us page
+
+[33mcommit 5f4bbd58e684fb8a6c485ce9392a1e4c6a11f36a[m
+Author: thompsonnaidu <thompsonnaiducm1343@gmail.com>
+Date:   Tue Dec 3 08:26:48 2019 +0530
+
+    Implementing route for contacts routes with JWT authentication
+
+[33mcommit 2f8b4ae0a95a85461070b5114ef4404c47a9eb43[m
+Author: thompsonnaidu <thompsonnaiducm1343@gmail.com>
+Date:   Tue Dec 3 08:24:16 2019 +0530
+
+    Implementing Authentication using JWT for user routes
+
+[33mcommit 802e7a5011e3a5052531a5fa38f34a0e1c5105ff[m
+Author: thompsonnaidu <thompsonnaiducm1343@gmail.com>
+Date:   Mon Dec 2 09:27:47 2019 +0530
+
+    Creating database connection and creating registration routes
+
+[33mcommit 9ea7a9b204ec7deb5c6f4a87047d139fa272d601[m
+Author: thompsonnaidu <thompsonnaiducm1343@gmail.com>
+Date:   Mon Dec 2 08:29:41 2019 +0530
+
+    Express server setup with initial routes

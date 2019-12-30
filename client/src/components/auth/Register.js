@@ -1,12 +1,12 @@
-import React , {useState, useContext} from 'react'
+import React , {useState, useContext,useEffect} from 'react'
 import AlertContext from '../../context/alert/alertContext'
 import AuthContext from '../../context/auth/authContext'
-const Register = () => {
+const Register = (props) => {
 
     const alertContext=useContext(AlertContext);
     const {setAlert}=alertContext;
     const authContext=useContext(AuthContext);
-    const {}=authContext;
+    const {register,error,clearErrors,isAuthenticated}=authContext;
 
     const [user,setUser]= useState({
         name:"",
@@ -24,7 +24,8 @@ const Register = () => {
         }else if(password !== password2){
             setAlert("Password do not match",'danger')
         }else{
-            console.log("Register User")
+            
+            register({name,email,password});
         }
         
     };
@@ -32,6 +33,20 @@ const Register = () => {
     const onChange= e=>{
         return setUser({ ...user, [e.target.name]:e.target.value});
     }
+
+    useEffect(()=>{
+
+        if(isAuthenticated){
+            props.history.push('/');
+        }
+        if(error === "User already exits"){
+            setAlert(error,'danger');
+            clearErrors();
+        }
+
+        // eslint-disable-next-line
+    },[error,isAuthenticated,props.history]);
+
 
     return (
         <div className="form-container">
