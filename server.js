@@ -19,8 +19,7 @@ app.use('/api/auth',require('./routes/auth'))
 
 
 //server static assets in production
-if(process.env.Node_ENV === 'production'){
-    console.log("I am inside production ",process.env)
+if(process.env.NODE_ENV === 'production'){
     // set static folder
     app.use(express.static('client/build'));
 
