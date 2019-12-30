@@ -2,7 +2,7 @@ import React,{useContext}from 'react'
 import PropTypes from 'prop-types'
 import ContactContext from '../../context/contacts/contactContext'
 const ContactItem = ({contact}) => {
-    const { id ,name,email,phone,type}=contact;
+    const { _id ,name,email,phone,type}=contact;
 
     const contactContext= useContext(ContactContext);
 
@@ -12,7 +12,7 @@ const ContactItem = ({contact}) => {
     }
     const onDelete = ()=>{
         
-        contactContext.deleteContact(id);
+        contactContext.deleteContact(_id);
         contactContext.clearCurrent();
     }
 
