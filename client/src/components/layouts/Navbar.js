@@ -45,7 +45,7 @@ const Navbar = ({ title ,icon }) =>{
     return (
         <nav className="navbar navbar-expand-md bg-primary navbar-dark">
             {/* <!-- Brand --> */}
-            <a className={icon+" navbar-brand"} > {title}</a>
+            <span className={icon+" navbar-brand"} > {title}</span>
 
             {/* <!-- Toggler/collapsibe Button --> */}
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

@@ -1,7 +1,6 @@
 import {
     ADD_CONTACT,
     DELETE_CONTACT,
-    SET_ALERT,
     CLEAR_CURRENT,
     FILTER_CONTACTS,
     CLEAR_FILTER,
@@ -49,7 +48,7 @@ export default (state ,action )=>{
                 filtered:((state.filtered !==null)?state.filtered.map(contact=> contact._id === action.payload._id ? action.payload:contact):null),
                 loading:false
 
-            };
+            }; 
         
         case FILTER_CONTACTS:
             return{

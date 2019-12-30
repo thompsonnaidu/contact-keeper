@@ -1,6 +1,5 @@
 import React , {useState ,useContext,useEffect} from 'react'
 import ContactContext from '../../context/contacts/contactContext' 
-import { UPDATE_CONTACT } from '../../context/types';
 
 const ContactForm = () => {
 
